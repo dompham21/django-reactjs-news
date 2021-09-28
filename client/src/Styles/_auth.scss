@@ -1,0 +1,82 @@
+.auth-container {
+    padding: 16px;
+    min-height: 100vh;
+
+    .auth__papper {
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0 0 2px 0 #919eab3d, 0 16px 32px -4px #919eab3d;
+        border-radius: 16px;
+        max-width: 464px;
+
+        h3 {
+            padding: 0 40px 40px 40px; 
+            font-size: 32px;    
+            font-weight: 700;
+            
+        }
+        
+        img {
+            object-fit: cover;
+            max-width: 100%;
+        }
+
+        @include breakpoints-down(medium) {
+            display: none;
+        }
+    }
+    .auth__form {
+        padding: 24px;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        &-detail {
+            max-width: 480px;
+            flex: 1;
+            .auth__form-header {
+                margin-bottom: 40px;
+                .auth__form-title {
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                }
+
+                .auth__form-description {    
+                    font-weight: 400;
+                    color: #637381;
+                    font-size: 16px;
+                }
+
+                
+            }
+            .btn-auth {
+                width: 100%;
+                color: #fff;
+                background-color: #FF3030;
+                box-shadow: 0 8px 16px 0 #ff30303d;
+                border-radius: 8px;
+                height: 48px;
+                font-size: 15px;
+                font-weight: 700;
+                &:hover {
+                    border: 0;
+                    background-color: #e60505;
+                }
+            }
+            .link-auth {
+                color: #FF3030;
+                font-weight: 500;
+                font-size: 14px;
+                &:hover {
+                    color: #e60505;
+                    text-decoration: underline;
+                }
+            }
+            .auth__form-footer {
+                margin-top: 24px;
+            }
+            
+        }
+        
+    }
+}

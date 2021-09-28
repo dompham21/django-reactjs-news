@@ -1,0 +1,131 @@
+.manager-post {
+    width: 100%;
+    height: 100%;
+    padding: 24px 48px;
+    &-header {
+        margin-bottom: 40px;
+        justify-content: space-between;
+
+        .manager-post-title {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.5;
+
+        }
+        .manager-post-btn-add {
+            color: white;
+            background-color: rgb(255, 48, 48);
+            box-shadow: #ff30303d 0px 8px 16px 0px;
+            border-radius: 8px;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 14px;
+            height: unset;
+            line-height: 1.7;
+            svg {
+                margin-right: 10px;
+            }
+        }
+    }
+    >.container {
+        border-radius: 6px;
+        color: rgb(33, 43, 54);
+        padding-bottom: 48px;
+        .manager-post-helper {
+            margin-bottom: 24px;
+            padding: 24px 0;
+            justify-content: space-between;
+            .manager-post-search {
+                height: unset;
+                font-size: 20px;
+                padding: 8px;
+                border-radius: 8px;
+                width: 240px;
+
+            }
+
+        }
+        .manager-post-list {
+            .list-post-item {
+                cursor: pointer;
+                border-radius: 16px;
+                overflow: hidden;
+                background-color: white;
+                box-shadow: #919eab3d 0px 0px 2px 0px, #919eab3d 0px 16px 32px -4px;
+                .list-post-item-top {
+                    position: relative;
+
+                }
+                .list-post-item-thumbnail {
+                    img {
+                        width: 100%;
+                        height: 175px;
+                    }
+                }
+                .circular {
+                    width: 80px;
+                    height: 36px;
+                    position: absolute;
+                    background: url("https://minimals.cc/static/icons/shape-avatar.svg") center center / contain no-repeat;
+                    z-index: 3;
+                    bottom: -15px;
+                    left: 0;
+                
+                }
+                .list-post-item-author {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    z-index: 9;
+                    position: absolute;
+                    left: 24px;
+                    bottom: -16px;
+
+
+                }
+                .list-post-item-content {
+                    padding: 32px 24px 24px 24px;
+                    .list-post-item-date {
+                        color: rgb(145, 158, 171);
+                        line-height: 1.5;
+                        font-size: 12px;
+                        margin-bottom: 8px;
+                    }
+                    .list-post-item-title {
+                        font-weight: 500;
+                        font-size: 14px;
+                        overflow: hidden;
+                        -webkit-line-clamp: 2;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .list-post-item-action {
+                    padding: 0 24px;
+                    padding-bottom: 24px;
+                    gap: 5px;
+                    span {
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                        transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.04);
+                        }
+                    }
+                    svg {
+                        font-size: 24px;
+                        color: #757575;
+                        cursor: pointer;
+                    }
+
+                }
+            }
+        }
+    }
+}

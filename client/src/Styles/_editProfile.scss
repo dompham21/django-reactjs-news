@@ -1,0 +1,158 @@
+.edit-profile {
+    width: 100%;
+    height: 100%;
+    padding: 24px 48px;
+    &-title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 40px;
+    }
+
+    >.container {
+        gap: 24px;
+        >.profile-left {
+            width: calc(100% * 1/3);
+            box-shadow: #32325d05 0px 2px 5px -1px, #0000000d 0px 1px 3px -1px;
+            background-color: white;
+            border-radius: 6px;
+            padding-bottom: 80px;
+            .user-wrapper {
+                padding: 24px;
+                .user-current-status {
+                    justify-content: flex-end;
+                    margin-bottom: 30px;
+                    .ant-tag {
+                        border-radius: 6px;
+                        font-size: 12px;
+                        font-weight: 700;
+                    }
+                }
+
+                .user-avatar {
+                    width: 144px;
+                    height: 144px;
+                    margin: auto;
+                    border-radius: 50%;
+                    padding: 8px;
+                    border: 1px dashed rgba(145, 158, 171, 0.32);
+                    &-container {
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        position: relative;
+                        cursor: pointer;
+                        img {
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        .user-avatar-overlay {
+                            cursor: pointer;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            position: absolute;
+                            transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                            background-color: rgb(22, 28, 36);
+                            color: white;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            font-size: 12px;
+                            &:hover {
+                                opacity: 0.72;
+                            }
+
+                            svg {
+                                font-size: 24px;
+                            }
+                            &.is-create {
+                                color: rgb(99, 115, 129);
+                                background-color: rgb(244, 246, 248);
+                                opacity: 0.72;
+                            }
+                        }
+                        .btn-upload {
+                            cursor: pointer;
+                            position: absolute;
+                            color: white;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            z-index: 10;
+                        }
+                    }
+                }
+                .user-config-upload {
+                    font-size: 12px;
+                    color: rgb(99, 115, 129);
+                    text-align: center;
+                    margin-top: 18px;
+
+                }
+                .user-switch-banned {
+                    margin-top: 35px;
+                    justify-content: space-between;
+                    align-items: center;
+                    .user-switch-content {
+                        font-size: 14px;
+                        flex-direction: column;
+                        gap: 4px;
+                        .title {
+                            font-weight: 600;
+                        }
+                        .description {
+                            color: rgb(99, 115, 129);
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+
+        >.profile-right {
+            width: calc(100% * 2/3);
+            box-shadow: #32325d05 0px 2px 5px -1px, #0000000d 0px 1px 3px -1px;
+            background-color: white;
+            border-radius: 6px;
+
+            .edit-form-profile {
+                padding: 24px;
+                .container {
+                    flex-direction: column;
+
+                    .form-input-group {
+                        gap: 16px;
+                    }   
+                    
+                }
+                .btn-wrapper {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
+
+.btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: unset;
+    padding: 6px 16px;
+    border-radius: 8px;
+    background-color: rgb(255, 48, 48);
+    color: white;
+
+    &:hover, &:focus {
+        background-color: rgb(183, 24, 51);
+        color: white;
+        box-shadow: unset;
+        border-color: unset;
+    }
+}

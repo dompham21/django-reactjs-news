@@ -1,0 +1,98 @@
+.create-post {
+    width: 100%;
+    height: 100%;
+    padding: 24px 48px;
+    &-title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        gap: 24px;
+        .create-post-left {
+            width: calc(100% * 2/3);
+            box-shadow: #32325d05 0px 2px 5px -1px, #0000000d 0px 1px 3px -1px;
+            background-color: white;
+            border-radius: 16px;
+            padding: 24px;
+           
+            .quill {
+                border: 1px solid rgba(145, 158, 171, 0.32);
+                border-radius: 8px;
+                .ql-toolbar {
+                    border: 0;
+                    border-bottom: 1px solid rgba(145, 158, 171, 0.32);
+    
+                }
+
+                .ql-container {
+                    border: 0;
+                    font-size: 16px;
+
+                    .ql-editor {
+                        min-height: 330px;
+                       &::before {
+                           font-size: 16px;
+                           
+                       }
+                        a {
+                            cursor: pointer;
+                            color: #1a4c90;
+                            text-decoration: none;
+                        }
+                        .ql-video {
+                            $video-container-width: 100%;
+                            width: $video-container-width;
+                            height: calc( #{$video-container-width} / #{$video-ratio} );
+                        }
+                    }
+                }
+            }
+            
+            
+           
+            
+        }
+
+        .create-post-right {
+            width: calc(100% * 1/3);
+            &-wrapper {
+                box-shadow: #32325d05 0px 2px 5px -1px, #0000000d 0px 1px 3px -1px;
+                background-color: white;
+                border-radius: 16px;
+                padding: 24px;
+                margin-bottom: 24px;
+                .ant-select-selector {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+                .switch-title {
+                    font-size: 14px;
+                    color: black;
+                }
+            }
+            .create-post-wrapper-btn {
+                gap: 12px;
+                .btn-post {
+                    width: 100%;
+                    padding: 7px 21px;
+                    border-radius: 8px;
+                    height: 48px;
+                    font-weight: 500;
+                    line-height: 1.71429;
+                    min-width: 64px;
+                    font-size: 15px;
+                    &.submit-post {
+                        background-color: rgb(255, 48, 48);
+                        color: white;
+                    }
+                }
+            }
+            
+
+        }
+    }
+    
+}

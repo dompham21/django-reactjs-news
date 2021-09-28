@@ -1,0 +1,110 @@
+.elementor {
+    padding: 10px 90px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    @include breakpoints-down(large) {
+        padding: 10px 50px;
+    }
+    @include breakpoints-down(small) {
+        padding: 10px 30px;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    } 
+    &-container {
+        display: flex;
+        flex-wrap: nowrap;
+        
+        .thumbnail {
+            max-width: 165px;
+            border-radius: 10px;
+            margin-right: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            img {
+                object-fit: cover;
+                transition: 0.5s ease;
+                border-radius: 10px;
+                width: 100%;
+                height: 112px;
+
+            }
+        }
+        .content {
+            .title {
+                cursor: pointer;
+                margin-bottom: 9px;
+                transition: color 0.25s ease;
+                font-size: 18.619px;
+                font-weight: 700;
+                line-height: 18px;
+
+            }
+
+            .description {
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 1.38em;
+                margin-bottom: 10px;
+                color: #717171;
+            }
+            .meta {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 15px;
+                .category {
+                    
+                    color: #717171;
+                    margin-right: 8px;
+                    padding-right: 7px;
+                    position: relative;
+
+                    &::after {
+                        width: 6px;
+                        height: 6px;
+                        background: #A0A0A0;
+                        content: "";
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: -3px;
+                    }
+                }
+                .date {
+                   
+                    color: #A0A0A0;
+
+                }
+            }
+        }
+        @include breakpoints-down(large) {
+            flex-direction: column;
+            .thumbnail {
+                max-width: unset !important;
+                margin-bottom: 20px;
+            }
+        } 
+        @include breakpoints-down(small) {
+            flex-direction: row;
+            .thumbnail {
+                max-width: 165px !important;
+                margin-bottom: 20px;
+            }
+        }
+        
+
+        &:hover {
+            .thumbnail {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+            .content {
+                .title {            
+                    color: #FF3524;
+                }
+            } 
+        }
+    }
+}

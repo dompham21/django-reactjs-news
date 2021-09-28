@@ -1,0 +1,180 @@
+.manager-user {
+    width: 100%;
+    height: 100%;
+    padding: 24px 48px;
+    &-header {
+        margin-bottom: 40px;
+        justify-content: space-between;
+
+        .manager-user-title {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.5;
+
+        }
+        .manager-user-btn-add {
+            color: white;
+            background-color: rgb(255, 48, 48);
+            box-shadow: #ff30303d 0px 8px 16px 0px;
+            border-radius: 8px;
+            padding: 6px 16px;
+            font-weight: 700;
+            font-size: 14px;
+            height: unset;
+            line-height: 1.7;
+            svg {
+                margin-right: 10px;
+            }
+        }
+    }
+    >.container {
+
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: #32325d05 0px 2px 5px -1px, #0000000d 0px 1px 3px -1px;
+        color: rgb(33, 43, 54);
+
+        .manager-user-helper {
+            margin-bottom: 24px;
+            padding: 24px;
+            justify-content: space-between;
+            .manager-user-search {
+                height: unset;
+                font-size: 20px;
+                padding: 8px;
+                border-radius: 8px;
+                width: 240px;
+
+            }
+            svg {
+                cursor: pointer;
+                font-size: 24px;
+            }
+
+        }
+        .manager-user-list {
+            padding: 0 24px;
+            .ant-table-thead > tr > th {
+                background-color: rgb(244, 246, 248);
+                color: rgb(99, 115, 129);
+                border: 0;
+                &:last-child {
+                    border-top-right-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                }
+                &:first-child {
+                    border-top-left-radius: 6px;
+                    border-bottom-left-radius: 6px;
+                }
+                &::before {
+                    content: unset !important;
+                }
+            }
+
+            span.ant-checkbox {
+                .ant-checkbox-inner {
+                    border-radius: 5px;
+                }
+                &.ant-checkbox-indeterminate { //check box select all
+                    .ant-checkbox-inner {
+                        background-color: #1890ff;
+                        &::after {
+                            height: 2px;
+                            background-color: white;
+                            border-radius: 3px;
+                        }
+                    }
+                }
+            }
+            .col-name {
+                &-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    img {
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                    }
+                    .col-name-text {
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .col-tag {
+                .ant-tag{
+                    border-radius: 6px;
+                }
+            }
+            .col-action {
+                display: flex;
+                align-items: center;
+                span {
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.04);
+                    }
+                }
+                svg {
+                    font-size: 24px;
+                    color: #757575;
+                    cursor: pointer;
+                }
+            }
+
+            .has-select-row {
+                border-radius: 6px;
+                margin-bottom: 24px;
+                height: 64px;
+                background-color: rgb(255, 227, 213);
+                color: rgb(255, 48, 48);
+                justify-content: space-between;
+                padding: 0 12px;
+                span {
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.04);
+                    }
+                }
+                svg {
+                    font-size: 24px;
+                    color: #757575;
+                    cursor: pointer;
+                }
+            }
+
+            .ant-table-filter-trigger {
+                font-size: 13px;
+                border-radius: 50%;
+                padding: 0;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.04);
+                }
+            }
+            
+        }
+    }
+}
+.ant-table-filter-dropdown {
+    .ant-dropdown-menu {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        padding: 0;
+    }
+    .ant-table-filter-dropdown-btns {
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+}

@@ -1,0 +1,165 @@
+.header {
+    padding: 22px 90px;
+    @include breakpoints-down(large) {
+        padding: 22px 90px 22px 50px;
+    }
+    @include breakpoints-down(small) {
+        padding: 22px 90px 22px 30px;
+    }
+    &__logo {
+        img {
+            cursor: pointer;
+        }
+        @include breakpoints-down(small) {
+            margin-right: 20px;
+        }
+    }
+
+    &__menu {
+
+        .menu {
+            li.menu-item {
+                padding: 20px 16px;
+                position: relative;
+                color: #686868;
+                font-size: 17px;
+                font-weight: 500;
+
+                &:hover {
+                    color: #F72210;
+                    cursor: pointer;
+                    .sub-menu {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0px);
+                    }
+                }
+
+                .sub-menu {
+                    z-index: 99;
+                    position: absolute;
+                    opacity: 0;
+                    visibility: hidden;
+                    text-align: left;
+                    border-radius: 10px;
+                    background-color: white;
+                    transform: translateY(15px);
+                    transition: all 500ms ease;
+                    min-width: 210px;
+                    box-shadow: 0px 3px 6px 0px #00000026;
+                    top: 100%;
+                    .menu-item {
+                        padding:  6px 25px;
+                    }
+                }
+            }
+        
+        }
+        @include breakpoints-down(large) {
+            display: none;
+        }
+    }
+
+    &__responsive {
+        width: 510px;
+        display: none;
+        position: absolute;
+        right: 0;
+        z-index: 999;
+        padding-right: 30px;
+
+        @include breakpoints-down(large) {
+            display: flex;
+            justify-content: flex-end;
+        }
+        @include breakpoints-down(small) {
+            width: 350px;
+        }
+        .btn-show {
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            cursor:pointer;
+            position: relative;
+            .ba{
+                width:25px;
+                height:2px;
+                left:50%;
+                transform:translateX(-50%);
+                background:black;
+                position:absolute;
+
+                &.bar-1 {
+                    top:17px;
+                }
+                &.bar-2 {
+                    top:24px;
+                }
+                &.bar-3 {
+                    top:31px;
+                }
+            }
+        }
+
+        .hidden-menu {
+            position: absolute;
+            right: 30px;
+            width: 100%;
+            top: 50px;
+            color: #ccccccf0;
+            background: #000;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            display: none;
+            
+
+            li.menu-item {
+                padding: 10px 20px;
+                &:not(:nth-last-child()) {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                &:first-child {
+                    border-radius: 6px 6px 0 0;
+                }
+
+                &:last-child {
+                    border-radius: 0 0 6px 6px;
+                }
+
+                &:hover {
+                    background: #FF3524;
+                    color: white;
+                }
+                .sub-menu {
+
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                }
+                
+            }
+
+            &.active {
+                display: block;
+
+            }
+           
+            
+        }
+    }
+
+    &__search {
+        .ant-input-search .ant-input-group span.ant-input-affix-wrapper.ant-input-affix-wrapper-lg
+          {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+        .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+    }
+}

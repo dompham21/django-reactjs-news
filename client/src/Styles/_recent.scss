@@ -1,0 +1,122 @@
+.recent-post {
+    padding: 20px 90px;
+    margin-top: 80px;
+
+    @include breakpoints-down(large) {
+        padding: 20px 50px;
+    }
+    @include breakpoints-down(small) {
+        padding: 20px 30px;
+    }
+    .container {
+        gap: 30px;
+        @include breakpoints-down(large) {
+            flex-direction: column;
+        }
+        .recent-list {
+            width: 36.5%;
+            @include breakpoints-down(large) {
+                width: 100%;
+            }
+            &-title {
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: 35px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #E4E4E4;
+                color: #272727;
+            }
+            &-item {
+                gap: 25px;
+                cursor: pointer;
+
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+
+                .number {
+                    font-size: 36px;
+                    font-weight: 900;
+                    color: rgba(220, 220, 220, 0.5);
+                    line-height: 1;
+                }
+                .title {
+                    cursor: pointer;
+                    margin-bottom: 9px;
+                    transition: color 0.25s ease;
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 1.2em;
+                    color: #272727;
+                    &:hover {
+                        color: #FF3524;
+                    }
+
+                }
+                
+                .meta {
+                    .category {
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 15px;
+                        color: #717171;
+                        margin-right: 8px;
+                        padding-right: 7px;
+                        position: relative;
+    
+                        &::after {
+                            width: 6px;
+                            height: 6px;
+                            background: #A0A0A0;
+                            content: "";
+                            border-radius: 50%;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            right: -3px;
+                        }
+                    }
+                    .date {
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 15px;
+                        color: #A0A0A0;
+    
+                    }
+                }
+                &:hover {
+                    .number {
+                        color: #49494980;
+                    }
+                }
+            }
+        }
+        .recent-elementor {
+            width: 63.5%;
+            flex-direction: column;
+            gap: 20px;
+            @include breakpoints-down(large) {
+                width: 100%;
+            }
+            &-top {
+                gap: 20px;
+                @include breakpoints-down(small) {
+                   flex-direction: column;
+                }
+               
+
+            }
+            &-bottom {
+                .description {
+                    color: white;
+                    @include breakpoints-down(small) {
+                        display: none;
+                    }
+                }
+            }
+           
+            
+        }
+    }
+}
+

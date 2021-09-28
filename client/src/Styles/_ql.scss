@@ -1,0 +1,101 @@
+.ql {
+    &-align {
+        &-center {
+            text-align: center;
+        }
+        &-right {
+            text-align: right;
+        }
+        &-justify {
+            text-align: justify;
+        }
+    }
+    &-font {
+        &-serif {
+            font-family: serif;
+        }
+        &-monospace {
+            font-family: monospace;
+        }
+    }
+    &-syntax {
+        background-color: #23241f;
+        color: #f8f8f2;
+        overflow: visible;
+        white-space: pre-wrap;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        span.hljs-keyword {
+            color: #c678dd;
+        }
+        span.hljs-built_in {
+            color: #e6c07b;
+        }
+        span.hljs-string {
+            color: #98c379;
+
+        }
+        span.hljs-name {
+            color: #e06c75;
+
+        }
+        span.hljs-attr  {
+            color: #d19a66;
+        }
+        span.hljs-title {
+            color: #61aeee;
+
+        }
+    }
+   
+    .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+
+        iframe, object, embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}
+
+blockquote {
+    border-left: 4px solid #ccc;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 16px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.ql-video-wrapper {
+    width: 80%;
+    margin: auto;
+}
+ 
+.ql-video-inner {
+    padding-top:56.25%;
+    position:relative;
+    height:0;
+}
+ 
+.ql-video-inner iframe,
+.ql-video-inner object,
+.ql-video-inner embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

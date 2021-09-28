@@ -1,0 +1,58 @@
+.dont-miss {
+    padding: 10px 90px;
+    margin-top: 80px;
+
+
+    @include breakpoints-down(large) {
+        padding: 10px 50px;
+    }
+    @include breakpoints-down(small) {
+        padding: 10px 30px;
+    }
+
+    &-heading {
+        margin-bottom: 36px;
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 28px;
+            color: #272727;
+            margin-bottom: 8px;
+        }
+
+        .sub-title {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 18px;
+            color: #717171;
+        }
+    }
+
+    &-container {
+        gap: 20px;
+        @include breakpoints-down(large) {
+            flex-direction: column;
+        }
+        .container-left {
+            flex-direction: column;
+            gap: 20px;
+            width: 41%;
+            @include breakpoints-down(large) {
+                width: 100%;
+            }
+            img {
+                height: 270px;
+            }
+        }
+        .container-right {
+            width: 59%;
+            @include breakpoints-down(large) {
+                width: 100%;
+            }
+            img {
+                height: 455px;
+            }
+        }
+
+    }
+}
