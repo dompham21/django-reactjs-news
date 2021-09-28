@@ -2,15 +2,15 @@ import React from 'react'
 
 import Router from './routes/index';
 import ScrollToTop from './Components/ScrollToTop';
-// import NotistackProvider from './Components/NotistackProvider';
+import NotistackProvider from './Components/NotistackProvider';
 function App() {
   return (
-    // <NotistackProvider>
+    <NotistackProvider>
     <>
         <ScrollToTop/>
         <Router/>
     </>
-    // </NotistackProvider>
+    </NotistackProvider>
   )
 }
 

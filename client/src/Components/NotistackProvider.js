@@ -1,22 +1,22 @@
-// import { SnackbarProvider } from 'notistack5';
+import { SnackbarProvider } from 'notistack5';
 
 
 
 
 
-// export default function NotistackProvider({ children }) {
+export default function NotistackProvider({ children }) {
 
-//   return (
-//     <SnackbarProvider
-//       dense
-//       maxSnack={5}
-//       autoHideDuration={3000}
-//       anchorOrigin={{
-//         vertical: 'top',
-//         horizontal: 'right'
-//       }}
-//     >
-//       {children}
-//     </SnackbarProvider>
-//   );
-// }
+  return (
+    <SnackbarProvider
+      dense
+      maxSnack={5}
+      autoHideDuration={3000}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right'
+      }}
+    >
+      {children}
+    </SnackbarProvider>
+  );
+}
