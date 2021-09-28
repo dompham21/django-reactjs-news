@@ -20,10 +20,7 @@ const Loadable = (Component) => (props) => {
 
 export default function Router() {
     return useRoutes([
-        {
-            path: '/',
-            element: <Home/>,
-        },
+        
         {
             path: 'post/:id',
             element: <DetailPost/>
@@ -42,32 +39,36 @@ export default function Router() {
                     <Register/>
                 </GuessGuard>
         },
-        // {
-        //     path: 'admin',
-        //     element: 
-        //         // <AuthGuard>
-        //             <AdminLayout/>,
-        //         // </AuthGuard>,
-        //     children: [
-        //         { path: '/', element: <Navigate to="/admin/dashboard" replace /> },
-        //         { path: 'dashboard', element: <DashBoard /> },
-        //         { 
-        //             path: 'user', 
-        //             children: [
-        //                 { path: '/', element: <AdminManagerUser /> },
-        //                 { path: 'edit', element: <CreateUser /> },
-        //                 { path: 'create', element: <EditProfileUser /> },
-        //             ]
-        //         },
-        //         { 
-        //             path: 'post', 
-        //             children: [
-        //                 { path: '/', element: <AdminManagerPost /> },
-        //                 { path: 'create', element: <CreatePost /> },
-        //             ]
-        //         },
-        //     ]
-        // },
+        {
+            path: 'admin',
+            element: 
+                // <AuthGuard>
+                    <AdminLayout/>,
+                // </AuthGuard>,
+            children: [
+                { path: '/', element: <Navigate to="/admin/dashboard" replace />},
+                { path: 'dashboard', element: <DashBoard /> },
+                { 
+                    path: 'user', 
+                    children: [
+                        { path: '/', element: <AdminManagerUser /> },
+                        { path: 'edit', element: <CreateUser /> },
+                        { path: 'create', element: <EditProfileUser /> },
+                    ]
+                },
+                { 
+                    path: 'post', 
+                    children: [
+                        { path: '/', element: <AdminManagerPost /> },
+                        { path: 'create', element: <CreatePost /> },
+                    ]
+                },
+            ]
+        },
+        {
+            path: '/',
+            element: <Home/>,
+        },
         {
             path: '*',
             element: <Page404/>
