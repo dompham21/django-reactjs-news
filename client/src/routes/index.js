@@ -42,32 +42,32 @@ export default function Router() {
                     <Register/>
                 </GuessGuard>
         },
-        {
-            path: 'admin',
-            element: 
-                // <AuthGuard>
-                    <AdminLayout/>,
-                // </AuthGuard>,
-            children: [
-                { path: '/', element: <Navigate to="/admin/dashboard" replace /> },
-                { path: 'dashboard', element: <DashBoard /> },
-                { 
-                    path: 'user', 
-                    children: [
-                        { path: '/', element: <AdminManagerUser /> },
-                        { path: 'edit', element: <CreateUser /> },
-                        { path: 'create', element: <EditProfileUser /> },
-                    ]
-                },
-                { 
-                    path: 'post', 
-                    children: [
-                        { path: '/', element: <AdminManagerPost /> },
-                        { path: 'create', element: <CreatePost /> },
-                    ]
-                },
-            ]
-        },
+        // {
+        //     path: 'admin',
+        //     element: 
+        //         // <AuthGuard>
+        //             <AdminLayout/>,
+        //         // </AuthGuard>,
+        //     children: [
+        //         { path: '/', element: <Navigate to="/admin/dashboard" replace /> },
+        //         { path: 'dashboard', element: <DashBoard /> },
+        //         { 
+        //             path: 'user', 
+        //             children: [
+        //                 { path: '/', element: <AdminManagerUser /> },
+        //                 { path: 'edit', element: <CreateUser /> },
+        //                 { path: 'create', element: <EditProfileUser /> },
+        //             ]
+        //         },
+        //         { 
+        //             path: 'post', 
+        //             children: [
+        //                 { path: '/', element: <AdminManagerPost /> },
+        //                 { path: 'create', element: <CreatePost /> },
+        //             ]
+        //         },
+        //     ]
+        // },
         {
             path: '*',
             element: <Page404/>
