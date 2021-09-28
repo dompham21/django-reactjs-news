@@ -118,6 +118,7 @@ class UserList(generics.ListAPIView):
 
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = UserSerializer
     lookup_field = 'username'
 
