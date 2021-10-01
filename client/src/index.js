@@ -12,6 +12,7 @@ import "swiper/components/pagination/pagination.min.css"
 import "swiper/components/navigation/navigation.min.css"
 import "swiper/components/effect-fade/effect-fade.min.css"
 import 'highlight.js/styles/github.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const store = configureStore();
 

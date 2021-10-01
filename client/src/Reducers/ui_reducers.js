@@ -1,7 +1,7 @@
 
 const initialState = {
     showDrawerPreview: false,
-    htmlFromEditor: ''
+    htmlFromEditor: '',
 };
 
   
@@ -20,7 +20,6 @@ const reducer = (state = initialState, action) => {
         };
       }
       case 'HTML_FROM_EDITOR': {
-  
           return {
               ...state,
               htmlFromEditor: action.payload

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Row , Menu } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
@@ -54,8 +54,9 @@ let siderBarArr = [
 
 function SideBarAdmin() {
     const location = useLocation();
-    
     const [showSideBar, setShowSideBar] = useState(false)
+
+  
     return (
         <div className={`sidebar${showSideBar?" is-active" : ""}`}>
             <div className="sidebar__wrapper" >
@@ -72,7 +73,7 @@ function SideBarAdmin() {
                 <div className="sidebar__menu">
                     <div className="sidebar__menu-container">
                         <Menu
-                            defaultSelectedKeys={[`${location.pathname.split("/")[2]}`]}
+                            defaultSelectedKeys={[`${location.pathname.split("/")[2] ? location.pathname.split("/")[2] : "dashboard"}`]}
                             mode="inline"
                             className="sidebar__menu-list"
                         >   
