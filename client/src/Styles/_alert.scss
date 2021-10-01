@@ -1,0 +1,35 @@
+.ant-alert {
+    &.ant-alert-error {
+        background-color: #FFE7D9;
+        border-radius: 8px;
+        font-size: 15px;
+        border: 0;
+        line-height: 1.57;
+        margin-bottom: 24px;
+        padding: 12px 15px;
+        .ant-alert-message {
+            color: #7A0C2E;
+        }
+
+    }
+}
+
+.Toastify {
+    &__toast {
+        border-radius: 8px !important;
+
+        &-container {
+        
+        }
+        &--error {
+
+        }
+        &-body {
+            line-height: 1.57;
+            font-size: 15px;
+            font-weight: 500;
+
+        }
+
+    }
+}

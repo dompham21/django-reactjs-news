@@ -1,44 +1,56 @@
 import React from 'react'
-import { useFormik, FormikProvider, Form, FastField, Field } from 'formik';
-// import { useSnackbar } from 'notistack5';
-import { Link, Link as RouterLink } from 'react-router-dom';
-import {  Input, Button, Checkbox } from 'antd';
+import { useFormik, FormikProvider, Form, FastField } from 'formik';
+import { Link } from 'react-router-dom';
+import {  Button } from 'antd';
 import * as Yup from 'yup';
 import InputField from '../CustomField/InputField';
 import CheckboxField from '../CustomField/CheckboxField';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchLoginAction } from '../../Actions/auth_actions';
+import useIsMountedRef from '../../hooks/useIsMountedRef';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
-    // const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    const isMountedRef = useIsMountedRef();
     const dispatch = useDispatch()
-    const LoginSchema = Yup.object().shape({
-        email: Yup.string().email('Email must be a valid email address').required('Email is required'),
-        password: Yup.string().required('Password is required')
-      });
+    const isLoading = useSelector(state => state.auth.loading)
+    let navigate = useNavigate();
 
-    const onLoginSubmit = () => {
-        dispatch(fetchLoginAction(values));
-    }
+
+    const LoginSchema = Yup.object().shape({
+        username: Yup.string().required('Username is required'),
+        password: Yup.string().required('Password is required')
+    });
+    
+    
+  
     const formik = useFormik({
         initialValues: {
-            email: '',
+            username: '',
             password: '',
             remember: false
         },    
         validationSchema: LoginSchema,
-        onSubmit: onLoginSubmit
+        onSubmit:  (values, { setErrors, setSubmitting, resetForm }) => {
+            
+            dispatch(fetchLoginAction(values, navigate));
+            
+            if (isMountedRef.current) {
+                setSubmitting(isLoading); 
+                resetForm();           
+            } 
+                   
+        }
 
     })
     const { errors, touched, values, isSubmitting, handleSubmit, getFieldProps } = formik;
-    // console.log(getFieldProps)
     return (
         <FormikProvider value={formik}>
             <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
                 <FastField
-                    label={'Email address'}
-                    name="email"
-                    type='email'
+                    label={'User name'}
+                    name="username"
+                    type='text'
                     component={InputField}
                 />
                 <FastField
