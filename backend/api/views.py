@@ -12,6 +12,8 @@ from rest_framework import filters
 from rest_framework.views import APIView
 from .storage import up_image_to_cloud
 from rest_framework.exceptions import APIException
+from .serializer import MyTokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 
 # Create your views here.
@@ -35,7 +37,7 @@ class PostList(generics.ListCreateAPIView):
             post.save()
         serializer = PostSerializer(post)
         exception = APIException(serializer.data)
-        exception.status_code = status.HTTP_201_CREATED
+        exception.status_code = status.HTTP_200_OK
         raise exception
 
 
@@ -126,3 +128,7 @@ class UserDetail(generics.RetrieveAPIView):
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomJWTSerializer
