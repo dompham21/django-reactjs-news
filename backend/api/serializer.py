@@ -90,7 +90,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
         user.set_password(validated_data['password'])
         user.save()
-        #return Response(user, status=status.HTTP_201_CREATED)
+
         return user
 
 
