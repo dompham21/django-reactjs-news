@@ -76,8 +76,11 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
         exception = APIException(serializer.data)
         exception.status_code = status.HTTP_200_OK
         raise exception
-
-
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        self.perform_destroy(instance)
+        data = {"status": "delete ok"}
+        return Response(data, status=status.HTTP_200_OK)
 
 class CategoryList(generics.ListCreateAPIView):
     queryset = Category.objects.all()
